@@ -6,7 +6,7 @@
 #### -> Fork this repository.
 #### -> You can add code in any language.
 #### -> Add your code to the respective folder.
-#### ->If you want to contribute in any other language, you can create a new folder with the name of your language and add code to it.
+#### -> If you want to contribute in any other language, you can create a new folder with the name of your language and add code to it.
 ##
 
 ## Happy Hacktober
