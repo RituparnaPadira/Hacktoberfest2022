@@ -1,7 +1,7 @@
 # Hacktoberfest2022
 ### A beginner friendly repository for hacktoberfest 2022.
 
-### Beginners can get started by contributing to this repository.
+#### Beginners can get started by contributing to this repository.
 ### Fork this repository.
 ### You can add code in any language.
 ### Add your code to the respective folder.
