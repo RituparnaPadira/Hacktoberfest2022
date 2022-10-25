@@ -1,0 +1,66 @@
+class Solution {
+public:
+    void bfsUtil(vector<int> adj[],int n,int i,vector<bool> &vis)
+    {
+     queue<int> q;
+     q.push(i);
+     vis[i] = true;
+     while(!q.empty())
+       {
+        int curr = q.front();
+        q.pop();
+        vis[curr] = true;
+        //cout<<curr<<" "; 
+        for(int j=0;j<adj[curr].size();j++)
+           {
+            if(!vis[adj[curr][j]])
+              {
+               q.push(adj[curr][j]);
+               vis[adj[curr][j]] = true; 
+              } 
+           }
+       }
+    }
+    
+    int bfs(vector<int> adj[],int n)
+    {
+     vector<bool> vis(n,false);
+     int a = 0;
+     for(int i=0;i<n;i++)
+        {
+         if(!vis[i])
+           {
+            //cout<<i<<" ";
+            bfsUtil(adj,n,i,vis);
+            a++; 
+           }
+        }
+     return a;    
+    }
+    
+    int findCircleNum(vector<vector<int>>& isConnected) {
+     int n = isConnected.size();
+     vector<int> adj[n];
+     for(int i=0;i<n;i++)
+        {
+         for(int j=0;j<n;j++)
+            {
+             if(isConnected[i][j] && i!=j)
+               {
+                adj[i].push_back(j);
+               } 
+            } 
+        }
+     
+     // for(int i=0;i<n;i++)
+     //    {
+     //     cout<<i<<" "; 
+     //     for(auto j : adj[i])
+     //        {
+     //         cout<<j<<" ";  
+     //        }
+     //     cout<<endl; 
+     //    } 
+     return bfs(adj,n);
+    }
+};
